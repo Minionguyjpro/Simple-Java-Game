@@ -1,12 +1,20 @@
-import java.lang.*;
-// Inherit Thread
-public class Counter extends Thread      
-{
-        // Declare a new Thread
-        Thread T; 
-        // The order in which the program should be executed                           
-        public void run()                     
-        {                              
-        ....            
-        }
+public class Counter {                                        
+
+    // Creates a new font with a counter that all classes can access
+    Font fnt0 = new Font("Comics", Font.BOLD, 20);              
+    public static int count = 0;                                
+
+    // Draws the value of count 
+    public void render(Graphics g) {                            
+        g.setFont(fnt0);                                        
+        g.setColor(Color.BLACK);  
+
+        //Draw count on position (x=10, y=30)                              
+        g.drawString(Integer.toString(count), 10, 30);          
+    }
+
+     //If methods reset is used --> reset counter
+    public void reset(){                                       
+        this.count = 0;
+    }
 }
